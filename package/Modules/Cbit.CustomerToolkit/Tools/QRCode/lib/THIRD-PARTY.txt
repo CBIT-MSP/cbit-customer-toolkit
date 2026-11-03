@@ -1,0 +1,20 @@
+ZXing.Net 0.16.11 by Michael Jahn and ZXing.Net contributors
+Copyright ZXing and ZXing.Net authors. Licensed under Apache License 2.0.
+See ZXing.Net-LICENSE.txt for the upstream license and notices.
+
+Project: https://github.com/micjahn/ZXing.Net
+Package: https://www.nuget.org/packages/ZXing.Net/0.16.11
+Downloaded from:
+https://api.nuget.org/v3-flatcontainer/zxing.net/0.16.11/zxing.net.0.16.11.nupkg
+
+The DLLs are unmodified files from the package. The utility loads the net40
+assembly for Windows PowerShell, and netstandard2.0 for PowerShell 7.
+No package manager or runtime download is used.
+
+SHA256:
+Package: 7D39234D668E558B3D374D18116ED57021D7C0DF482801F1E1DB4F1DB9314EC3
+net40/zxing.dll: 643A5A3DB0AE02998B507BEB82DBC362A2D5593B429963DB17EB78089AABB95A
+netstandard2.0/zxing.dll: F3B823B6FD6492525A7547989056883DEF5D43BE1E12C4F63FA54DF73E3C5CFC
+
+The module checks the selected DLL hash before loading it. These hashes detect
+accidental changes; they are not a substitute for a trusted distribution source.

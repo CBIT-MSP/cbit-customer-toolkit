@@ -1,0 +1,2 @@
+# Preserve the BOM and original line endings of the validated Windows payload.
+package/** -text
