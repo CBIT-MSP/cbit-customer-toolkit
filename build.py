@@ -1,4 +1,4 @@
-"""Apply the QR update to the verified CBIT Customer Toolkit rc15 ZIP."""
+"""Apply the toolkit updates to the verified CBIT Customer Toolkit rc15 ZIP."""
 import hashlib
 import sys
 from copy import copy

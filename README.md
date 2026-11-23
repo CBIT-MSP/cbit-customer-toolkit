@@ -6,8 +6,13 @@ enrollment image locally. Choose the clipboard or an image file, then copy
 the Base32 secret for IT Glue or the complete `otpauth://` URI. Both outputs
 are available from one scan. Choose **0**, then Enter, to return to the toolkit.
 
-The `package` directory contains the files added or replaced by the QR
-update. To build the toolkit, download the original
+In **[M] GPO Deployment > Action1**, Step 4 automatically copies the MSI
+UNC path to the clipboard before opening GPMC. Paste it into the New Package
+file name box with **Ctrl+V**. If the clipboard is unavailable, the wizard
+shows a manual-copy message and continues.
+
+The `package` directory contains the files added or replaced by toolkit
+updates. To build the toolkit, download the original
 [v0.3.4-rc15 release ZIP](https://github.com/CBIT-MSP/cbit-customer-toolkit/releases/tag/v0.3.4-rc15)
 and run the following command with Python 3.8 or newer.
 
