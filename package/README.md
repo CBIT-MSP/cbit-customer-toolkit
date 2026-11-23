@@ -1,4 +1,4 @@
-﻿# CBIT Customer Toolkit — preview 0.3.4
+# CBIT Customer Toolkit — preview 0.3.4
 
 This is a separate, temporary-session edition of your technician tools for a normal PowerShell window accessed through ScreenConnect, RDP, or locally. Your working roaming repository and profile loader have not been modified.
 
@@ -14,7 +14,7 @@ A separate toolkit window opens directly to the technician menu. Type `exit`, or
 
 Use the arrow keys to highlight a tool, or use its letter shortcut. Opening a tool displays a small action screen: press `Enter` to run with defaults, `O` to configure menu-safe options, `H` for help, or `B` to return. Because the default run is the normal path, it starts automatically after eight seconds if no key is pressed. Press `F1` or `?` on the main menu for help on the highlighted tool. The help screen names the underlying command for advanced technicians, but normal menu use does not require knowing PowerShell syntax.
 
-The launcher prefers an installed `pwsh.exe` found in PATH. If PowerShell 7 is absent in normal Auto mode, it asks whether to install PowerShell 7 with Windows Package Manager. Answering `N` or pressing Enter uses Windows PowerShell 5.1 without installing anything; Network Scanner and Email Auth Check require PowerShell 7. You can choose an engine explicitly:
+The launcher checks the standard MSI location, PATH, and the app alias, and verifies that PowerShell 7 runs. If absent, it asks before installing. Windows Server uses a Microsoft-signed PowerShell 7.6.6 LTS MSI; Windows clients use WinGet when available, otherwise MSI. MSI installation requests elevation and never restarts automatically. The MSI location is detected without reopening the shell. Answering `N` or pressing Enter uses Windows PowerShell 5.1 without installing anything; Network Scanner and Email Auth Check require PowerShell 7. You can choose an engine explicitly:
 
 ```powershell
 & '.\Start-Toolkit.ps1' -Engine PowerShell7
