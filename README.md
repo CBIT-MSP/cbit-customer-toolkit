@@ -11,6 +11,15 @@ UNC path to the clipboard before opening GPMC. Paste it into the New Package
 file name box with **Ctrl+V**. If the clipboard is unavailable, the wizard
 shows a manual-copy message and continues.
 
+SentinelOne startup deployments preserve verbose MSI logs under
+`C:\CBIT\Logs\SentinelOne-Installer`, accessible only to SYSTEM and Administrators
+because installer logs can contain the site token. The existing
+`C:\CBIT\Logs\S1-Install.log` records the package version, execution context,
+and detailed-log path while redacting the site token. Failed installs return
+a nonzero script exit code; successful installs still verify the agent service.
+Existing deployed GPO scripts receive this change when the updated SentinelOne
+deployment workflow is run for their domain.
+
 The `package` directory contains the files added or replaced by toolkit
 updates. To build the toolkit, download the original
 [v0.3.4-rc15 release ZIP](https://github.com/CBIT-MSP/cbit-customer-toolkit/releases/tag/v0.3.4-rc15)
@@ -29,3 +38,9 @@ Run `tests\Test-QrIntegration.ps1 -PackageRoot <extracted toolkit folder>`
 in a clean Windows PowerShell 5.1 or PowerShell 7 session to check the menu
 and launch behavior. The packaged QR utility also includes its own decoder
 and menu tests using synthetic QR codes.
+
+Run `tests\Test-SentinelOneStartup.ps1 -PackageRoot <extracted toolkit folder>`
+and `tests\Test-GpoIntegration.ps1 -PackageRoot <extracted toolkit folder>` in
+a clean Windows PowerShell 5.1 session to check SentinelOne logging, installer
+failure handling, and the GPO launch adapter. These tests mock the installer
+and deployment launch; they do not install agents or change domain policy.
